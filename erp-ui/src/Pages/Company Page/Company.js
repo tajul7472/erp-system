@@ -4,14 +4,6 @@ import home from '../../Icons/home.png'
 import Modal from "./Modal";
 import './company.css'
 
-
-
-
-
-
-
-// lkdsfhaklnmbhjgjk ms  mbjsdagbfnm nbbvhsdf mn v vbshb jnkdsagkjbmngbgbvjh nghjgdsavmn
-
 function Company() {
   const [modalOpen, setModalOpen] = useState(false);
   const keyPress = useCallback(e => {

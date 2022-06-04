@@ -19,6 +19,7 @@ import DepositCategory from './Pages/Deposit Page/DepositCategory';
 import AllDeposit from './Pages/Deposit Page/AllDeposit';
 import ExpensesCategory from './Pages/Expense Page/ExpensesCategory';
 import AllExpenses from './Pages/Expense Page/AllExpenses';
+import OpeningBlance from './Pages/Balance Page/OpeningBlance';
 // import SideMenu, { menuItems } from "./components/SideMenu";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
@@ -106,12 +107,12 @@ function App() {
   // const AllExpenses = () => {
   //   return <h1>AllExpenses</h1>
   // }
-  const OpeningBlance = () => {
-    return <h1>OpeningBlance</h1>
-  }
-  const UpdateopeningBalance = () => {
-    return <h1>UpdateopeningBalance</h1>
-  }
+  // const OpeningBlance = () => {
+  //   return <h1>OpeningBlance</h1>
+  // }
+  // const UpdateopeningBalance = () => {
+  //   return <h1>UpdateopeningBalance</h1>
+  // }
   const DailyOpeningBalance = () => {
     return <h1>DailyOpeningBalance</h1>
   }
@@ -230,12 +231,10 @@ function App() {
           <Route path={"/Expenses/allExpenses"}element={<AllExpenses />}>
             
             </Route>
-          <Route path={"/OpeningBlance/updateopeningbalance"}element={<UpdateopeningBalance />}>
+          <Route path={"/OpeningBlance/updateopeningbalance"}element={<OpeningBlance />}>
             
             </Route>
-          <Route path={"/OpeningBlance"}element={<OpeningBlance />}>
-            
-            </Route>
+          
           <Route path={"/OpeningBlance/dailyopeningbalance"}element={<DailyOpeningBalance />}>
             
             </Route>
