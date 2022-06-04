@@ -1,0 +1,157 @@
+.header-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.header-top-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.header-top-logo img{
+    width: 35px;
+    height: 35px;
+}
+.header-top-logo span{
+    font-family: 'roboto';
+    font-size: 1.4rem;
+    
+}
+.header-top-tittle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.header-top-tittle span{
+    font-family: 'roboto';
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.header-top-tittle span::before{
+    display: inline-block;
+    padding: 0.5rem;
+    color: #6c757d;
+    content: "/";
+}
+.header-top-tittle span:first-child::before{
+    display: inline-block;
+    padding: 0.5rem;
+    color: #6c757d;
+    content: "";
+}
+.allProduct-main-section{
+    /* background-color: rgba(167, 167, 167, 0.4); */
+    background-color: #ffff;
+    border-radius: 4px;
+    /* box-shadow: 0 1px 1px rgb(0 0 0 / 10%); */
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    margin-top: 2rem;
+    
+   
+    
+}
+.allProduct-search-form{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    font-family: 'roboto';
+    padding: 1rem 1rem;
+   
+    
+    
+    
+}
+.allProduct-search-option-input{
+    /* width: 550px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'roboto';
+    padding-right: 1.5rem; */
+    display: grid;
+    margin: 0rem 0.5rem;
+    
+    
+}
+ .allProduct-search-option-input label{
+    padding-bottom: .4rem;
+}
+
+.allProduct-search-option-input input{
+    
+   /* width: 100%; */
+    outline: none;
+    padding: 0.4rem 0rem 0.4rem 0.5rem;
+  
+    border-radius: 4px;
+    border: 1px solid #eaeaea ;
+}
+
+
+.allProduct-search-btn button{
+    width: 35%;
+    margin-top: 1.5rem ; 
+    margin-left: 0.6rem;
+    margin-right: 0.5rem;
+    padding: 0.3rem 1rem;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background-color:#18A745 ;
+    color: #ffff;
+    font-family: 'roboto';
+    font-size: 1.2rem;
+}
+.allProduct-search-btn button:hover{
+  background-color: #148839;
+}
+.allProduct-clear-btn button{
+   
+    margin-top: 1.5rem ; 
+   
+    padding: 0.3rem 1rem;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background-color: crimson;;
+    color: #ffff;
+    font-family: 'roboto';
+    font-size: 1.2rem;
+}
+.allProduct-clear-btn button:hover{
+    background-color: rgb(168, 11, 43);
+}
+.show-all-product{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    border-top: 1px solid #F6F7FB;
+    padding-bottom: 2rem;
+    padding: 1rem;
+}
+.show-all-product .total span{
+    font-size: 1.3rem;
+    font-family: 'roboto';
+ }
+ .show-all-product .total .total-amount{
+    background-color: #6c757d;
+     text-align: center;
+     padding: 0.2rem 0.6rem;
+     font-size: 1.1rem;
+     color: #ffff;
+     font-family: 'roboto';
+     margin-left: 0.3rem;
+     border-radius: 4px;
+ }
+.show span{
+    padding: 0rem 0.2rem;
+}
+.show span select{
+    padding: 0.2rem 0rem;
+    background-color: #F6F7FB;
+}

@@ -1,0 +1,152 @@
+.alert-section {
+    background-color: rgb(243, 232, 217);
+    margin-top: 2rem;
+    text-align: center;
+    font-family: 'roboto';
+    padding: 1rem;
+    border-radius: 4px;
+    color: rgba(65, 58, 58, 0.933);
+}
+
+.slaes-customer-select-section {
+    background-color: #ffff;
+    border-radius: 4px;
+    /* box-shadow: 0 1px 1px rgb(0 0 0 / 10%); */
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    margin-top: 1.5rem;
+}
+
+.slaes-customer-select-section-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 1rem;
+    font-family: 'roboto';
+    padding: 1.5rem 1rem 2.5rem 1rem;
+
+}
+
+.slaes-search-option-input {
+    display: grid;
+    margin: 0rem 0.5rem;
+}
+
+.slaes-search-option-input label {
+    padding-bottom: .4rem;
+}
+
+.slaes-search-option-input select {
+
+    width: 100%;
+    outline: none;
+    padding: 0.4rem 0rem 0.4rem 0.5rem;
+
+    border-radius: 4px;
+    border: 1px solid #eaeaea;
+}
+
+.slaes-search-option-input select option:first-child {
+    display: none;
+}
+
+.slaes-search-option-input input {
+
+    /* width: 100%; */
+    outline: none;
+    padding: 0.4rem 0rem 0.4rem 0.5rem;
+
+    border-radius: 4px;
+    border: 1px solid #eaeaea;
+}
+
+.sales-main-section {
+    background-color: #ffff;
+    border-radius: 4px;
+    /* box-shadow: 0 1px 1px rgb(0 0 0 / 10%); */
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    margin-top: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+.slaes-product-input {
+    display: flex;
+    padding: 1.2rem 1rem;
+    justify-content: center;
+}
+
+.slaes-product-input .sales-icon {
+    font-size: 1.5rem;
+    background-color: aliceblue;
+    padding: 0.3rem 0.5rem;
+
+}
+
+.slaes-product-input input {
+
+    width: 60%;
+    outline: none;
+    padding: 0.4rem 0rem 0.4rem 0.5rem;
+
+    border-radius: 4px;
+    border: 1px solid #eaeaea;
+
+}
+
+.sales-product-table {
+    padding: 0.2rem 1.5rem;
+}
+
+.sales-product-table table {
+    font-family: 'roboto';
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.sales-product-table th {
+    text-align: center;
+    color: #f8f9fa;
+    font-weight: 400;
+    background-color: #828aac;
+    border: 1px solid rgb(168, 163, 163);
+}
+
+.sales-card {
+    font-family: 'roboto';
+    /* background-color: #f8f6f6; */
+    background-color: #ffff;
+    width: 40%;
+    
+    /* margin-top: 1.5rem;
+    margin-left: 15rem; */
+    margin: 1.5rem 0rem 2rem 15rem;
+    padding: 2rem 1.5rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 4px;
+    font-size: 1.3rem;
+    
+}
+
+.sales-quentiy {
+    border: 1px solid #eaeaea;
+    padding: 0.5rem 0.3rem;
+}
+
+.sales-total {
+    border: 1px solid #eaeaea;
+    padding: 0.5rem 0.3rem;
+}
+.payments-section{
+    background-color: #ffff;
+    border-radius: 4px;
+    /* box-shadow: 0 1px 1px rgb(0 0 0 / 10%); */
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    margin-top: 1rem;
+    padding-bottom: 1.5rem;
+}
+.payments-section h3{
+    font-family: 'roboto';
+    font-weight: 300;
+    font-size: 1.3rem;
+    padding: 1.5rem 1.5rem;
+    border-bottom: 1px solid #F6F7FB;
+}
