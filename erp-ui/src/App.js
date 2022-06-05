@@ -25,6 +25,7 @@ import CreateEmploye from './Pages/Employee Page/CreateEmploye';
 import AllEmployee from './Pages/Employee Page/AllEmployee';
 import DepositExpenses from './Pages/Report Page/DepositExpenses';
 import SalesProfitLoss from './Pages/Report Page/SalesProfitLoss';
+import Dashboard from './Pages/Dashboard page/Dashboard';
 // import SideMenu, { menuItems } from "./components/SideMenu";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
@@ -37,9 +38,9 @@ function App() {
 // const Courses2 = () => <h1>Content/Courses 2</h1>;
 // const Videos2 = () => <h1>Content/Videos 2</h1>;
 // const Design2 = () => <h1>Design 2</h1>;
-  const Dashboard = () => {
-    return <h1>Dashboard</h1>
-  }
+  // const Dashboard = () => {
+  //   return <h1>Dashboard</h1>
+  // }
   const Peoples = () => {
     return <h1>Peoples</h1>
   }
@@ -162,12 +163,12 @@ function App() {
             </>
           ))} */}
         <Routes>
-          <Route exact path={"/"} element={<Dashboard />}>
+          <Route exact path={"/dashboard"} element={<Dashboard />}>
             
           </Route>
-          <Route exact path={"/peoples"}element={<Peoples />}>
+          {/* <Route exact path={"/peoples"}element={<Peoples />}>
             
-          </Route>
+          </Route> */}
           <Route  path={"/peoples/company"}element={<Company />}>
             
           </Route>

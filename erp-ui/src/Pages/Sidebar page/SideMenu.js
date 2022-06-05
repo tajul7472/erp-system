@@ -7,13 +7,14 @@ export const menuItems = [
     {
         name: "Dashboard",
         exact: true,
-        to: "/",
+        to: "/dashboard",
         iconClassName: "bi bi-speedometer2",
     },
     {
         name: "Peoples",
-        exact: true,
-        to: `/peoples`,
+        // exact: true,
+        to: ``,
+
         iconClassName: "bi bi-people",
         subMenus: [
             {

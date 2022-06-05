@@ -10,22 +10,50 @@ const MenuItem = (props) => {
     const { name, subMenus, subMenus1, iconClassName, onClick, to, exact } = props;
     const [expand, setExpand] = useState(false);
 
-    
+    console.log("fdsjh", name)
+
     return (
-        <li onClick={props.onClick}>
-            <Link
-                exact
-                to={to}
+        // <li onClick={props.onClick}>
+        <li onClick={props.onClick} >
+
+            {
+                (name == "Dashboard" || name == "Stock") ?
+
+                    <Link
+                        exact
+                        to={to}
+                        // onClick={() => {
+                        //   setExpand((e) => !e);
+                        // }}
+                        className={`menu-item`}
+                    >
+                        <div className="menu-icon">
+                            <i className={iconClassName}></i>
+                        </div>
+                        <span >{name}</span>
+                    </Link>
+                    :
+                    <span className="menu-item">
+                        {/* <Link
+                to=''
+                // exact
+                // to={to}
                 // onClick={() => {
                 //   setExpand((e) => !e);
                 // }}
                 className={`menu-item`}
-            >
-                <div className="menu-icon">
-                    <i className={iconClassName}></i>
-                </div>
-                <span>{name}</span>
-            </Link>
+            > */}
+                        <div className="menu-icon">
+                            <i className={iconClassName}></i>
+                        </div>
+                        <span >{name}</span>
+                        {/* </Link> */}
+                    </span>
+
+            }
+
+
+
             {/* {subMenus && subMenus.length  > 0 ? (
         <ul className={`sub-menu`}>
           {subMenus.map((menu, index) => (
