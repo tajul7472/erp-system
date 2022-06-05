@@ -20,6 +20,9 @@ import AllDeposit from './Pages/Deposit Page/AllDeposit';
 import ExpensesCategory from './Pages/Expense Page/ExpensesCategory';
 import AllExpenses from './Pages/Expense Page/AllExpenses';
 import OpeningBlance from './Pages/Balance Page/OpeningBlance';
+import DailyOpeningBalance from './Pages/Balance Page/DailyOpeningBalance';
+import CreateEmploye from './Pages/Employee Page/CreateEmploye';
+import AllEmployee from './Pages/Employee Page/AllEmployee';
 // import SideMenu, { menuItems } from "./components/SideMenu";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
@@ -113,9 +116,9 @@ function App() {
   // const UpdateopeningBalance = () => {
   //   return <h1>UpdateopeningBalance</h1>
   // }
-  const DailyOpeningBalance = () => {
-    return <h1>DailyOpeningBalance</h1>
-  }
+  // const DailyOpeningBalance = () => {
+  //   return <h1>DailyOpeningBalance</h1>
+  // }
   const Report = () => {
     return <h1>Report</h1>
   }
@@ -128,6 +131,7 @@ function App() {
   const Employee = () => {
     return <h1>Employee</h1>
   }
+ 
   const [inactive,setInactive]=useState(false)
   return (
     <div className="App">
@@ -249,6 +253,12 @@ function App() {
             
             </Route>
           <Route path={"/Employee"}element={<Employee />}>
+            
+            </Route>
+          <Route path={"/Employee/createEmploye"}element={<CreateEmploye />}>
+            
+            </Route>
+          <Route path={"/Employee/allEmployee"}element={<AllEmployee />}>
             
             </Route>
           

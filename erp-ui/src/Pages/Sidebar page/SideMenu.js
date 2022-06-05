@@ -177,6 +177,10 @@ export const menuItems = [
         name: "Employee Details",
         to: `/Employee`,
         iconClassName: "bi bi-person-check",
+        subMenus: [
+            { name: "Create Employee", to: "/Employee/createEmploye", },
+            { name: "All Employee", to: "/Employee/allEmployee" },
+        ]
        
     },
   
@@ -247,15 +251,15 @@ const SideMenu = (props) => {
                 </div>
             </div>
 
-            <div className="search-controller">
+            {/* <div className="search-controller">
                 <button className="search-btn">
                     <i class="bi bi-search"></i>
                 </button>
 
                 <input type="text" placeholder="search" />
-            </div>
+            </div> */}
 
-            <div className="divider"></div>
+            {/* <div className="divider"></div> */}
 
             <div className="main-menu">
                 <ul>

@@ -49,6 +49,7 @@ body{
     box-sizing: border-box;
     padding: 30px 20px;
     transition: width .2s ease-in;
+    
 }
 
 .side-menu.inactive{
@@ -114,6 +115,7 @@ body{
 }
 
 .side-menu .main-menu .menu-item{
+    
     color: #333;
     text-decoration: none;
     font-size: 15px;
