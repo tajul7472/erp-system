@@ -43,7 +43,7 @@ body{
 
 .side-menu{
     position: fixed;
-    background: #000;
+    background: rgb(240, 235, 235);
     width: 300px;
     height: 100%;
     box-sizing: border-box;
@@ -61,8 +61,8 @@ body{
 }
 
 .side-menu .top-section .logo{
-    width: 40px;
-    height: 40px;
+    width: 2000px;
+    height: 30px;
     overflow: hidden;
     display: inline-block;
 }
@@ -125,9 +125,9 @@ body{
 }
 
 .side-menu .main-menu .menu-item.active{
-    background: #333;
+    background: #fff;
     border-radius: 5px;
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 
@@ -194,11 +194,11 @@ body{
 
 .side-menu .main-menu .sub-menu a.active{
     /* change in background, not recorded in video */
-    background: #222;
+    background: #fff;
     display: block;
     
     border-radius: 5px;
-    color: #fff;
+    color: rgb(0, 0, 0);
 
 }
 

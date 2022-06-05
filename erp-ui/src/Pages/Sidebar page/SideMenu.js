@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import logo from '../../Icons/logo.png'
+// import logo from '../../Icons/logos.png'
+import logos from '../../Icons/logos.png'
 import MenuItem from './MenuItem'
 
 
@@ -241,7 +242,7 @@ const SideMenu = (props) => {
         <div className={`side-menu ${inactive ? "inactive" : ""}`}>
             <div className="top-section">
                 <div className="logo">
-                    <img src={logo} alt="webscript" />
+                    <img src={logos} alt="webscript" />
                 </div>
                 <div onClick={() => setInactive(!inactive)} className="toggle-menu-btn">
                     {inactive ? (
