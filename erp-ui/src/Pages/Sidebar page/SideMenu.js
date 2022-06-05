@@ -47,7 +47,7 @@ export const menuItems = [
     {
         name: "Purchase",
         to: `/Purchase`,
-        iconClassName: "bi bi-cart-plus-fill",
+        iconClassName: "bi bi-cart2",
         subMenus: [
             { name: "New Purchase", to: "/Purchase/newPurchase", },
             { name: "All Purchase", to: "/Purchase/allPurchase" },
@@ -95,7 +95,7 @@ export const menuItems = [
         name: "Deposit",
         to: `/Deposit`,
         // iconClassName: "bi bi-box-arrow-in-right",
-        iconClassName: "bi bi-bag-plus-fill",
+        iconClassName: "bi bi-journal-plus",
         subMenus: [
             {
                 name: "Deposit Category",
@@ -116,7 +116,7 @@ export const menuItems = [
         name: "Expenses",
         to: `/Expenses`,
         // iconClassName: "bi bi-box-arrow-in-right",
-        iconClassName: "bi bi-bag-dash-fill",
+        iconClassName: "bi bi-journal-minus",
         subMenus: [
             {
                 name: "Expenses Category",
