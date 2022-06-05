@@ -24,27 +24,27 @@ function Customer() {
         return () => document.removeEventListener('keydown', keyPress)
     }, [keyPress])
 
-    const customerData=[
+    const customerData = [
         {
-            customerId:1012,
-            companyName:'InspirBd',
-            cunstomerName:'Tajul Islam',
-            contact:'01705386513',
-            photo:'../../Icons/home.png',
-            previousDue:'58620',
-            totalPaid:'6565',
-            totalDue:'8566'
+            customerId: 1012,
+            companyName: 'InspirBd',
+            cunstomerName: 'Tajul Islam',
+            contact: '01705386513',
+            photo: '../../Icons/home.png',
+            previousDue: '58620',
+            totalPaid: '6565',
+            totalDue: '8566'
         },
         {
-            
-            customerId:1012,
-            companyName:'Brain Station 23',
-            cunstomerName:'Tajul Islam',
-            contact:'01705386513',
-            photo:'../../Icons/home.png',
-            previousDue:'58620',
-            totalPaid:'6565',
-            totalDue:'8566'
+
+            customerId: 1012,
+            companyName: 'Brain Station 23',
+            cunstomerName: 'Tajul Islam',
+            contact: '01705386513',
+            photo: '../../Icons/home.png',
+            previousDue: '58620',
+            totalPaid: '6565',
+            totalDue: '8566'
         }
     ]
     return (
@@ -123,27 +123,27 @@ function Customer() {
                     </div>
                 </div>
                 <div className="show-search-section">
-          <div className="show">
-            <span>Show</span>
-            <span>
-              <select>
-                <option>10</option>
-                <option>25</option>
-                <option>50</option>
-                <option>100</option>
-              </select>
-            </span>
-            <span>Entries</span>
-          </div>
-          <div className="search-option">
-            <label>Search:
-              <input type="text"
-                name="search"
-              />
-            </label>
-          </div>
+                    <div className="show">
+                        <span>Show</span>
+                        <span>
+                            <select>
+                                <option>10</option>
+                                <option>25</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                        </span>
+                        <span>Entries</span>
+                    </div>
+                    <div className="search-option">
+                        <label>Search:
+                            <input type="text"
+                                name="search"
+                            />
+                        </label>
+                    </div>
 
-        </div>
+                </div>
 
                 <div className="company-table">
                     <table>
@@ -159,22 +159,22 @@ function Customer() {
                                 <th>Total Due</th>
                                 <th>Action</th>
                             </tr>
-                           {
-                               customerData.map((item)=>(
-                                   <tr>
-                                       <td>{item.customerId}</td>
-                                       <td>{item.companyName}</td>
-                                       <td>{item.cunstomerName}</td>
-                                       <td>{item.contact}</td>
-                                       {/* <td>{item.photo}</td> */}
-                                       <td><img src={item.photo} /></td>
-                                       <td>{item.previousDue}</td>
-                                       <td>{item.totalPaid}</td>
-                                       <td>{item.totalDue}</td>
-                                       <td><button className="editBtn">Action</button></td>
-                                   </tr>
-                               ))
-                           }
+                            {
+                                customerData.map((item) => (
+                                    <tr>
+                                        <td>{item.customerId}</td>
+                                        <td>{item.companyName}</td>
+                                        <td>{item.cunstomerName}</td>
+                                        <td>{item.contact}</td>
+                                        {/* <td>{item.photo}</td> */}
+                                        <td><img src={item.photo} /></td>
+                                        <td>{item.previousDue}</td>
+                                        <td>{item.totalPaid}</td>
+                                        <td>{item.totalDue}</td>
+                                        <td><button className="editBtn">Action</button></td>
+                                    </tr>
+                                ))
+                            }
                         </tbody>
                     </table>
                 </div>

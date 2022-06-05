@@ -23,6 +23,8 @@ import OpeningBlance from './Pages/Balance Page/OpeningBlance';
 import DailyOpeningBalance from './Pages/Balance Page/DailyOpeningBalance';
 import CreateEmploye from './Pages/Employee Page/CreateEmploye';
 import AllEmployee from './Pages/Employee Page/AllEmployee';
+import DepositExpenses from './Pages/Report Page/DepositExpenses';
+import SalesProfitLoss from './Pages/Report Page/SalesProfitLoss';
 // import SideMenu, { menuItems } from "./components/SideMenu";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
@@ -122,12 +124,12 @@ function App() {
   const Report = () => {
     return <h1>Report</h1>
   }
-  const DepositExpenses = () => {
-    return <h1>DepositExpenses</h1>
-  }
-  const SalesProfitLoss = () => {
-    return <h1>SalesProfitLoss</h1>
-  }
+  // const DepositExpenses = () => {
+  //   return <h1>DepositExpenses</h1>
+  // }
+  // const SalesProfitLoss = () => {
+  //   return <h1>SalesProfitLoss</h1>
+  // }
   const Employee = () => {
     return <h1>Employee</h1>
   }
