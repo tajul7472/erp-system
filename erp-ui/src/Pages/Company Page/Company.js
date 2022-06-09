@@ -9,7 +9,7 @@ function Company() {
   const keyPress = useCallback(e => {
     if (e.key === 'Escape' && modalOpen) {
 
-      
+
       setModalOpen(false)
     }
   }, [setModalOpen, modalOpen])
@@ -19,12 +19,12 @@ function Company() {
     return () => document.removeEventListener('keydown', keyPress)
   }, [keyPress])
 
-  const companyData = [
+  const [companyData, setCompanyData] = useState([
     {
       id: 1,
       companyName: 'Inspirbd',
       companyAddress: 'Dhaka',
-      contact: '01705386513',
+      companyContact: '01705386513',
       country: 'Bangladesh',
       category: 'sell'
     },
@@ -32,11 +32,25 @@ function Company() {
       id: 2,
       companyName: 'Inspirbd',
       companyAddress: 'Dhaka',
-      contact: '01705386513',
+      companyContact: '01705386513',
       country: 'Bangladesh',
       category: 'sell'
     }
-  ]
+  ])
+  //Company Data Delete
+  const deleteCompanyData = (id) => {
+    setCompanyData(companyData.filter((data) => data.id != id))
+
+  }
+  
+    //Add Company Data
+    const addCompanyData=(data)=>{
+      const id = Math.floor(Math.random() * 10000 + 1)
+      const newData={id,...data}
+      setCompanyData([...companyData, newData])
+  
+  }
+
   return (
     <div className='company-section'>
       <div className='header-top'>
@@ -118,10 +132,10 @@ function Company() {
                     <td>{item.id}</td>
                     <td>{item.companyName}</td>
                     <td>{item.companyAddress}</td>
-                    <td>{item.contact}</td>
+                    <td>{item.companyContact}</td>
                     <td>{item.country}</td>
                     <td>{item.category}</td>
-                    <td><button className="deleteBtn">Delete</button><button className="editBtn">Edit</button></td>
+                    <td><button className="deleteBtn" onClick={() => deleteCompanyData(item.id)}>Delete</button><button className="editBtn">Edit</button></td>
                   </tr>
                 ))
               }
@@ -132,7 +146,7 @@ function Company() {
           </table>
         </div>
       </div>
-      {modalOpen && <Modal setOpenModal={setModalOpen} />}
+      {modalOpen && <Modal onAdd={addCompanyData} setOpenModal={setModalOpen} />}
     </div>
   )
 }

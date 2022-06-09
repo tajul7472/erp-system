@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./modal.css";
 import closeBtn from '../../Icons/close.png'
 
-function Modal({ setOpenModal }) {
+function Modal({ setOpenModal ,onAdd}) {
     const options = [
         { value: '', label: 'Please Select' },
         { value: 'Purchase', label: 'For Purchase' },
@@ -15,7 +15,9 @@ function Modal({ setOpenModal }) {
         companyName: '',
         companyAddress: '',
         companyContact: '',
-        country: ''
+        country: '',
+        
+        
     });
 
     const handleChange = (event) => {
@@ -26,15 +28,20 @@ function Modal({ setOpenModal }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(inputs);
+        onAdd(inputs)
+        
         setInputs({
 
             companyName: '',
             companyAddress: '',
             companyContact: '',
-            country: ''
+            country: '',
+            
         })
     }
+
+  
+  
 
     return (
         <div className="modalBackground">
@@ -100,21 +107,21 @@ function Modal({ setOpenModal }) {
 
                         </div>
 
-                      
+
                         <div className="footer">
-                    <button
-                        onClick={() => {
-                            setOpenModal(false);
-                        }}
-                        id="cancelBtn"
-                    >
-                        Cancel
-                    </button>
-                    <button>Save</button>
-                </div>
+                            <button
+                                onClick={() => {
+                                    setOpenModal(false);
+                                }}
+                                id="cancelBtn"
+                            >
+                                Cancel
+                            </button>
+                            <button >Save</button>
+                        </div>
                     </form>
                 </div>
-               
+
             </div>
         </div>
     );
