@@ -4,14 +4,14 @@ import home from '../../Icons/home.png'
 import "./createProduct.css"
 
 const CreateProduct = () => {
-  const [inputs, setInputs] = useState({
+  const [products, setProducts] = useState({
 
     productName: '',
     roll: '',
     fabricType: '',
     dia: '',
     billNumber: '',
-    fabricReceiveDate: '',
+    receiveDate: '',
     partyName: '',
     batchProcessDate: '',
     colorName: '',
@@ -23,43 +23,49 @@ const CreateProduct = () => {
     ggsm: '',
     styleNumber: '',
     yarnCount: '',
-    finishGSM: '',
+    finishGsm: '',
     yarnLotNumber: ''
 
   });
+//   const addProduct = (product) => {
+//     const id = Math.floor(Math.random() * 1000 + 1)
+//     const newProduct=({id,...product});
+//     setProducts([...products,newProduct])
+// }
 
 
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs(values => ({ ...values, [name]: value }));
+    setProducts(values => ({ ...values, [name]: value }));
 
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(inputs);
-    setInputs({
+    console.log(products);
+    // addProduct(products)
+    setProducts({
 
       productName: '',
       roll: '',
       fabricType: '',
       dia: '',
       billNumber: '',
-      fabricReceiveDate: '',
+      receiveDate: '',
       partyName: '',
       batchProcessDate: '',
       colorName: '',
       lotNumber: '',
       openTube: '',
       batchNumber: '',
-      slNumber: '',
+      slNo: '',
       orderNumber: '',
-      ggsm: '',
+      gsm: '',
       styleNumber: '',
       yarnCount: '',
-      finishGSM: '',
+      finishGsm: '',
       yarnLotNumber: ''
     })
   }
@@ -86,15 +92,15 @@ const CreateProduct = () => {
               <label>Product Name</label>
               <input type="text"
                 name="productName"
-                value={inputs.productName || ""}
+                value={products.productName || ""}
                 onChange={handleChange} />
 
             </div>
             <div className="product-label-with-input">
-              <label>Roll</label>
+              <label>roll</label>
               <input type="text"
                 name="roll"
-                value={inputs.roll || ""}
+                value={products.roll || ""}
                 onChange={handleChange} />
 
             </div>
@@ -102,7 +108,7 @@ const CreateProduct = () => {
               <label>Fabric Type</label>
               <input type="text"
                 name="fabricType"
-                value={inputs.fabricType || ""}
+                value={products.fabricType || ""}
                 onChange={handleChange} />
 
             </div>
@@ -110,7 +116,7 @@ const CreateProduct = () => {
               <label>Dia</label>
               <input type="text"
                 name="dia"
-                value={inputs.dia || ""}
+                value={products.dia || ""}
                 onChange={handleChange} />
 
             </div>
@@ -118,15 +124,15 @@ const CreateProduct = () => {
               <label>Bill Number</label>
               <input type="text"
                 name="billNumber"
-                value={inputs.billNumber || ""}
+                value={products.billNumber || ""}
                 onChange={handleChange} />
 
             </div>
             <div className="product-label-with-input">
               <label>Fabric Receive Date</label>
               <input type="date"
-                name="fabricReceiveDate"
-                value={inputs.fabricReceiveDate || ""}
+                name="receiveDate"
+                value={products.receiveDate || ""}
                 onChange={handleChange} />
 
             </div>
@@ -134,7 +140,7 @@ const CreateProduct = () => {
               <label>Party Name</label>
               <input type="text"
                 name="partyName"
-                value={inputs.partyName || ""}
+                value={products.partyName || ""}
                 onChange={handleChange} />
 
             </div>
@@ -142,7 +148,7 @@ const CreateProduct = () => {
               <label>Batch Process Date</label>
               <input type="date"
                 name="batchProcessDate"
-                value={inputs.batchProcessDate || ""}
+                value={products.batchProcessDate || ""}
                 onChange={handleChange} />
 
             </div>
@@ -150,7 +156,7 @@ const CreateProduct = () => {
               <label>Color Name</label>
               <input type="text"
                 name="colorName"
-                value={inputs.colorName || ""}
+                value={products.colorName || ""}
                 onChange={handleChange} />
 
             </div>
@@ -158,7 +164,7 @@ const CreateProduct = () => {
               <label>Lot Number</label>
               <input type="text"
                 name="lotNumber"
-                value={inputs.lotNumber || ""}
+                value={products.lotNumber || ""}
                 onChange={handleChange} />
 
             </div>
@@ -166,7 +172,7 @@ const CreateProduct = () => {
               <label>Open/ Tube</label>
               <input type="text"
                 name="openTube"
-                value={inputs.openTube || ""}
+                value={products.openTube || ""}
                 onChange={handleChange} />
 
             </div>
@@ -174,15 +180,15 @@ const CreateProduct = () => {
               <label>Batch Number</label>
               <input type="text"
                 name="batchNumber"
-                value={inputs.batchNumber || ""}
+                value={products.batchNumber || ""}
                 onChange={handleChange} />
 
             </div>
             <div className="product-label-with-input">
               <label>SL Number</label>
               <input type="text"
-                name="slNumber"
-                value={inputs.slNumber || ""}
+                name="slNo"
+                value={products.slNo || ""}
                 onChange={handleChange} />
 
             </div>
@@ -190,15 +196,15 @@ const CreateProduct = () => {
               <label>Order Number</label>
               <input type="text"
                 name="orderNumber"
-                value={inputs.orderNumber || ""}
+                value={products.orderNumber || ""}
                 onChange={handleChange} />
 
             </div>
             <div className="product-label-with-input">
               <label>G.G.S.M</label>
               <input type="text"
-                name="ggsm"
-                value={inputs.ggsm || ""}
+                name="gsm"
+                value={products.gsm || ""}
                 onChange={handleChange} />
 
             </div>
@@ -206,7 +212,7 @@ const CreateProduct = () => {
               <label>Style Number</label>
               <input type="text"
                 name="styleNumber"
-                value={inputs.styleNumber || ""}
+                value={products.styleNumber || ""}
                 onChange={handleChange} />
 
             </div>
@@ -214,15 +220,15 @@ const CreateProduct = () => {
               <label>Yarn Count</label>
               <input type="text"
                 name="yarnCount"
-                value={inputs.yarnCount || ""}
+                value={products.yarnCount || ""}
                 onChange={handleChange} />
 
             </div>
             <div className="product-label-with-input">
               <label>Finish GSM</label>
               <input type="text"
-                name="finishGSM"
-                value={inputs.finishGSM || ""}
+                name="finishGsm"
+                value={products.finishGsm || ""}
                 onChange={handleChange} />
 
             </div>
@@ -230,7 +236,7 @@ const CreateProduct = () => {
               <label>Yarn Lot Number</label>
               <input type="text"
                 name="yarnLotNumber"
-                value={inputs.yarnLotNumber || ""}
+                value={products.yarnLotNumber || ""}
                 onChange={handleChange} />
 
             </div>

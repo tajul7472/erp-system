@@ -10,7 +10,7 @@ const MenuItem = (props) => {
     const { name, subMenus, subMenus1, iconClassName, onClick, to, exact } = props;
     const [expand, setExpand] = useState(false);
 
-    console.log("fdsjh", name)
+    
 
     return (
         // <li onClick={props.onClick}>

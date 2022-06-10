@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./modal.css";
 import closeBtn from '../../Icons/close.png'
 
-function Modal({ setOpenModal ,onAdd}) {
+function Modal({ setOpenModal, onAdd }) {
     const options = [
         { value: '', label: 'Please Select' },
         { value: 'Purchase', label: 'For Purchase' },
@@ -16,32 +16,36 @@ function Modal({ setOpenModal ,onAdd}) {
         companyAddress: '',
         companyContact: '',
         country: '',
-        
-        
+
+
     });
 
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({ ...values, [name]: value }))
+        console.log(name, value)
+
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         onAdd(inputs)
-        
+
         setInputs({
 
             companyName: '',
             companyAddress: '',
             companyContact: '',
             country: '',
-            
+
         })
+        setOpenModal(false);
+
     }
 
-  
-  
+
+
 
     return (
         <div className="modalBackground">
@@ -62,7 +66,7 @@ function Modal({ setOpenModal ,onAdd}) {
                         <div className="label-with-input">
 
                             <label>Company Select</label>
-                            <select id="company" name="companyFor"
+                            <select id="company" name="category"
                                 onChange={handleChange}
                             >
                                 {

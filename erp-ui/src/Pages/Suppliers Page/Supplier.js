@@ -8,10 +8,11 @@ import './supplier.css'
 function Supplier() {
     const options = [
         { value: '', label: 'Please Select' },
-        { value: 'Purchase', label: 'For Purchase' },
-        { value: 'sell', label: 'For Sell' },
-        { value: 'workorder', label: 'For Workorder' },
+        { value: 'Tashfia Export', label: 'Tashfia Export' },
+        { value: 'Tashfia Export', label: 'Eurotex Ltd' },
+        { value: 'Tashfia Export', label: 'Corona Transport' },
     ]
+
     const [modalOpen, setModalOpen] = useState(false);
     const keyPress = useCallback(e => {
         if (e.key === 'Escape' && modalOpen) {
@@ -24,29 +25,37 @@ function Supplier() {
         return () => document.removeEventListener('keydown', keyPress)
     }, [keyPress])
 
-    const supplierData=[
+    const [supplierData, setSupplierData] = useState([
         {
-            supplierId:1012,
-            companyName:'InspirBd',
-            supplierName:'Tajul Islam',
-            contact:'01705386513',
-            photo:'../../Icons/home.png',
-            previousDue:'58620',
-            totalPaid:'6565',
-            totalDue:'8566'
+            id: 1012,
+            companyName: 'InspirBd',
+            supplierName: 'Tajul Islam',
+            contact: '01705386513',
+            image: '../../Icons/home.png',
+            previousDue: '58620',
+            totalPaid: '6565',
+            totalDue: '8566'
         },
         {
-            
-            supplierId:1012,
-            companyName:'Brain Station 23',
-            supplierName:'Tajul Islam',
-            contact:'01705386513',
-            photo:'../../Icons/home.png',
-            previousDue:'58620',
-            totalPaid:'6565',
-            totalDue:'8566'
+
+            id: 1012,
+            companyName: 'Brain Station 23',
+            supplierName: 'Tajul Islam',
+            contact: '01705386513',
+            image: '../../Icons/home.png',
+            previousDue: '58620',
+            totalPaid: '6565',
+            totalDue: '8566'
         }
-    ]
+    ])
+
+    //Add Supplier Data
+    const addSupplierData = (data) => {
+        const id = Math.floor(Math.random() * 1000 + 1)
+        const newData=({id,...data})
+        setSupplierData([...supplierData,newData])
+    }
+
     return (
         <div className='supplier-section'>
             <div className='header-top'>
@@ -123,27 +132,27 @@ function Supplier() {
                     </div>
                 </div>
                 <div className="show-search-section">
-          <div className="show">
-            <span>Show</span>
-            <span>
-              <select>
-                <option>10</option>
-                <option>25</option>
-                <option>50</option>
-                <option>100</option>
-              </select>
-            </span>
-            <span>Entries</span>
-          </div>
-          <div className="search-option">
-            <label>Search:
-              <input type="text"
-                name="search"
-              />
-            </label>
-          </div>
+                    <div className="show">
+                        <span>Show</span>
+                        <span>
+                            <select>
+                                <option>10</option>
+                                <option>25</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                        </span>
+                        <span>Entries</span>
+                    </div>
+                    <div className="search-option">
+                        <label>Search:
+                            <input type="text"
+                                name="search"
+                            />
+                        </label>
+                    </div>
 
-        </div>
+                </div>
 
                 <div className="company-table">
                     <table>
@@ -159,29 +168,29 @@ function Supplier() {
                                 <th>Total Due</th>
                                 <th>Action</th>
                             </tr>
-                           {
-                               supplierData.map((item)=>(
-                                   <tr>
-                                       <td>{item.supplierId}</td>
-                                       <td>{item.companyName}</td>
-                                       <td>{item.supplierName}</td>
-                                       <td>{item.contact}</td>
-                                       {/* <td>{item.photo}</td> */}
-                                       <td><img src={item.photo} /></td>
-                                       <td>{item.previousDue}</td>
-                                       <td>{item.totalPaid}</td>
-                                       <td>{item.totalDue}</td>
-                                       <td><button className="editBtn">Action</button></td>
-                                   </tr>
-                               ))
-                           }
+                            {
+                                supplierData.map((item) => (
+                                    <tr>
+                                        <td>{item.id}</td>
+                                        <td>{item.companyName}</td>
+                                        <td>{item.supplierName}</td>
+                                        <td>{item.contact}</td>
+                                        {/* <td>{item.photo}</td> */}
+                                        <td><img src={item.image} /></td>
+                                        <td>{item.previousDue}</td>
+                                        <td>{item.totalPaid}</td>
+                                        <td>{item.totalDue}</td>
+                                        <td><button className="editBtn">Action</button></td>
+                                    </tr>
+                                ))
+                            }
                         </tbody>
                     </table>
                 </div>
             </div>
 
 
-            {modalOpen && <SupplierModal setOpenModal={setModalOpen} />}
+            {modalOpen && <SupplierModal setOpenModal={setModalOpen} onAdd={addSupplierData} />}
 
         </div>
     )

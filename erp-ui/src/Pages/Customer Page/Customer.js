@@ -8,10 +8,11 @@ import './customer.css'
 function Customer() {
     const options = [
         { value: '', label: 'Please Select' },
-        { value: 'Purchase', label: 'For Purchase' },
-        { value: 'sell', label: 'For Sell' },
-        { value: 'workorder', label: 'For Workorder' },
+        { value: 'Tashfia Export', label: 'Tashfia Export' },
+        { value: 'Tashfia Export', label: 'Eurotex Ltd' },
+        { value: 'Tashfia Export', label: 'Corona Transport' },
     ]
+
     const [modalOpen, setModalOpen] = useState(false);
     const keyPress = useCallback(e => {
         if (e.key === 'Escape' && modalOpen) {
@@ -24,29 +25,37 @@ function Customer() {
         return () => document.removeEventListener('keydown', keyPress)
     }, [keyPress])
 
-    const customerData = [
+    const [customerData, setCustomerData] = useState([
         {
-            customerId: 1012,
+            id: 1012,
             companyName: 'InspirBd',
-            cunstomerName: 'Tajul Islam',
+            customerName: 'Tajul Islam',
             contact: '01705386513',
-            photo: '../../Icons/home.png',
+            image: '../../Icons/home.png',
             previousDue: '58620',
             totalPaid: '6565',
             totalDue: '8566'
         },
         {
 
-            customerId: 1012,
+            id: 1012,
             companyName: 'Brain Station 23',
-            cunstomerName: 'Tajul Islam',
+            customerName: 'Tajul Islam',
             contact: '01705386513',
-            photo: '../../Icons/home.png',
+            image: '../../Icons/home.png',
             previousDue: '58620',
             totalPaid: '6565',
             totalDue: '8566'
         }
-    ]
+    ])
+
+    //Add Customer Data
+    const addCuctomerData = (data) => {
+        const id = Math.floor(Math.random() * 1000 + 1)
+        const newData = ({ id, ...data })
+        setCustomerData([...customerData, newData])
+
+    }
     return (
         <div className='customer-section'>
             <div className='header-top'>
@@ -153,7 +162,7 @@ function Customer() {
                                 <th>Company Name</th>
                                 <th>Customer Name</th>
                                 <th>Contact</th>
-                                <th>Photo</th>
+                                <th>image</th>
                                 <th>Previous Due</th>
                                 <th>Total Paid</th>
                                 <th>Total Due</th>
@@ -162,12 +171,12 @@ function Customer() {
                             {
                                 customerData.map((item) => (
                                     <tr>
-                                        <td>{item.customerId}</td>
+                                        <td>{item.id}</td>
                                         <td>{item.companyName}</td>
-                                        <td>{item.cunstomerName}</td>
+                                        <td>{item.customerName}</td>
                                         <td>{item.contact}</td>
-                                        {/* <td>{item.photo}</td> */}
-                                        <td><img src={item.photo} /></td>
+                                        {/* <td>{item.image}</td> */}
+                                        <td><img src={item.image} /></td>
                                         <td>{item.previousDue}</td>
                                         <td>{item.totalPaid}</td>
                                         <td>{item.totalDue}</td>
@@ -181,7 +190,7 @@ function Customer() {
             </div>
 
 
-            {modalOpen && <CustomerModal setOpenModal={setModalOpen} />}
+            {modalOpen && <CustomerModal setOpenModal={setModalOpen} onAdd={addCuctomerData} />}
 
         </div>
     )

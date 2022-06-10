@@ -147,7 +147,7 @@
     background-color: #F6F7FB;
   } */
   .company-table td:last-child{
-      display: flex;
+      /* display: flex; */
       justify-content: center;
       align-items: center;
   }
@@ -173,7 +173,6 @@
     font-family: 'roboto';
     font-size: 0.9rem;
     border-radius: 4px;
-    
     cursor: pointer;
   }
   .company-table .editBtn:hover{

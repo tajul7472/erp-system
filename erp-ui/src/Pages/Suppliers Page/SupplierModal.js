@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import "./supplierModal.css";
 import closeBtn from '../../Icons/close.png'
 
-function Modal({ setOpenModal }) {
+function Modal({ setOpenModal,onAdd }) {
     const options = [
         { value: '', label: 'Please Select' },
-        { value: 'Purchase', label: 'For Purchase' },
-        { value: 'sell', label: 'For Sell' },
-        { value: 'workorder', label: 'For Workorder' },
+        { value: 'Tashfia Export', label: 'Tashfia Export' },
+        { value: 'Tashfia Export', label: 'Eurotex Ltd' },
+        { value: 'Tashfia Export', label: 'Corona Transport' },
     ]
+
 
     const [inputs, setInputs] = useState({
 
@@ -18,7 +19,7 @@ function Modal({ setOpenModal }) {
         Nationality: '',
         presentAddress: '',
         PermanentAddress: '',
-        personalNumber: '',
+        contact: '',
         optionalNumber: '',
         supplierEmail: '',
         supplierNid: '',
@@ -38,6 +39,7 @@ function Modal({ setOpenModal }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputs);
+        onAdd(inputs)
         setInputs({
 
             supplierName: '',
@@ -46,7 +48,7 @@ function Modal({ setOpenModal }) {
             Nationality: '',
             presentAddress: '',
             PermanentAddress: '',
-            personalNumber: '',
+            contact: '',
             optionalNumber: '',
             supplierEmail: '',
             supplierNid: '',
@@ -54,6 +56,7 @@ function Modal({ setOpenModal }) {
             image: ''
 
         })
+        setOpenModal(false)
     }
 
     return (
@@ -75,7 +78,7 @@ function Modal({ setOpenModal }) {
                         <div className="supplier-label-with-input">
 
                             <label>Company Select</label>
-                            <select id="company" name="companyFor"
+                            <select id="company" name="companyName"
                                 onChange={handleChange}
                             >
                                 {
@@ -138,8 +141,8 @@ function Modal({ setOpenModal }) {
                         <div className="supplier-label-with-input">
                             <label>Personal Phone Number</label>
                             <input type="text"
-                                name="personalNumber"
-                                value={inputs.personalNumber || ""}
+                                name="contact"
+                                value={inputs.contact || ""}
                                 onChange={handleChange} />
 
                         </div>

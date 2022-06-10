@@ -1,39 +1,44 @@
-import React from 'react'
+import { useState } from 'react'
 import logo from '../../Icons/logo.png'
 import home from '../../Icons/home.png'
 import './allProduct.css'
 
 const AllProduct = () => {
-    const productList=[
+    const [productList, setProductList] = useState([
         {
-            Id:1012,
-            productName:'Micro Febric',
-            partyName:'Tajul Islam',
-            colorName:'Black',
-            slNo:'1456',
-            gsm:'58620',
-            receiveDate:'1/5/2022',
-            roll:'8566',
-            dia:'60',
-            orderNumber:'4565',
-            finishGsm:'270'
+            id: 1012,
+            productName: 'Micro Febric',
+            partyName: 'Tajul Islam',
+            colorName: 'Black',
+            slNo: '1456',
+            gsm: '58620',
+            receiveDate: '1/5/2022',
+            roll: '8566',
+            dia: '60',
+            orderNumber: '4565',
+            finishGsm: '270'
 
         },
         {
-            
-            Id:1012,
-            productName:'Micro Febric',
-            partyName:'Tajul Islam',
-            colorName:'Black',
-            slNo:'1456',
-            gsm:'58620',
-            receiveDate:'1/5/2022',
-            roll:'8566',
-            dia:'60',
-            orderNumber:'4565',
-            finishGsm:'270'
+
+            id: 1012,
+            productName: 'Micro Febric',
+            partyName: 'Tajul Islam',
+            colorName: 'Black',
+            slNo: '1456',
+            gsm: '58620',
+            receiveDate: '1/5/2022',
+            roll: '8566',
+            dia: '60',
+            orderNumber: '4565',
+            finishGsm: '270'
         }
-    ]
+    ])
+
+    //Add Product List
+   
+
+
     return (
         <div className='all-product-section'>
             <div className='header-top'>
@@ -114,24 +119,24 @@ const AllProduct = () => {
                                 <th>Finish GSM</th>
                                 <th>Action</th>
                             </tr>
-                           {
-                               productList.map((item)=>(
-                                   <tr>
-                                       <td>{item.Id}</td>
-                                       <td>{item.productName}</td>
-                                       <td>{item.partyName}</td>
-                                       <td>{item.colorName}</td>
-                                       <td>{item.slNo}</td>
-                                       <td>{item.gsm}</td>
-                                       <td>{item.receiveDate}</td>
-                                       <td>{item.roll}</td>
-                                       <td>{item.dia}</td>
-                                       <td>{item.orderNumber}</td>
-                                       <td>{item.finishGsm}</td>
-                                       <td><button className="editBtn">Action</button></td>
-                                   </tr>
-                               ))
-                           }
+                            {
+                                productList.map((item) => (
+                                    <tr>
+                                        <td>{item.id}</td>
+                                        <td>{item.productName}</td>
+                                        <td>{item.partyName}</td>
+                                        <td>{item.colorName}</td>
+                                        <td>{item.slNo}</td>
+                                        <td>{item.gsm}</td>
+                                        <td>{item.receiveDate}</td>
+                                        <td>{item.roll}</td>
+                                        <td>{item.dia}</td>
+                                        <td>{item.orderNumber}</td>
+                                        <td>{item.finishGsm}</td>
+                                        <td><button className="editBtn">Action</button></td>
+                                    </tr>
+                                ))
+                            }
                         </tbody>
                     </table>
                 </div>

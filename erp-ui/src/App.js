@@ -27,7 +27,7 @@ import DepositExpenses from './Pages/Report Page/DepositExpenses';
 import SalesProfitLoss from './Pages/Report Page/SalesProfitLoss';
 import Dashboard from './Pages/Dashboard page/Dashboard';
 // import SideMenu, { menuItems } from "./components/SideMenu";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 function App() {
 //   const Dashboard = () => <h1>Dashboard</h1>;
 // const Content = () => <h1>Content</h1>;
@@ -41,9 +41,9 @@ function App() {
   // const Dashboard = () => {
   //   return <h1>Dashboard</h1>
   // }
-  const Peoples = () => {
-    return <h1>Peoples</h1>
-  }
+  // const Peoples = () => {
+  //   return <h1>Peoples</h1>
+  // }
   // const Company = () => {
   //   return <Company/>
   // }
@@ -163,9 +163,11 @@ function App() {
             </>
           ))} */}
         <Routes>
-          <Route exact path={"/dashboard"} element={<Dashboard />}>
-            
-          </Route>
+          <Route exact path= {"/"} element={<Dashboard />}></Route>
+          {/* <Route path="/">
+                  <Redirect to="/dashboard"></Redirect>
+                </Route> */}
+          <Route exact path= {"/dashboard"} element={<Dashboard />}></Route>
           {/* <Route exact path={"/peoples"}element={<Peoples />}>
             
           </Route> */}
