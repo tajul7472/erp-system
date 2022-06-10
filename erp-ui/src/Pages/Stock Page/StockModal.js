@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./stockModal.css";
 import closeBtn from '../../Icons/close.png'
 
-function StockModal({ setOpenModal }) {
+function StockModal({ setOpenModal ,onAdd}) {
     const products = [
         { value: '', label: 'Please Select' },
         { value: 'Purchase', label: 'Micro Print' },
@@ -27,13 +27,15 @@ function StockModal({ setOpenModal }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputs);
+        onAdd(inputs)
         setInputs({
 
-            companyName: '',
-            companyAddress: '',
-            companyContact: '',
-            country: ''
+            supplier: '',
+            product: '',
+            quentity: '',
+            stockQuentity: ''
         })
+        setOpenModal(false)
     }
 
     return (
@@ -51,7 +53,7 @@ function StockModal({ setOpenModal }) {
                 </div>
 
                 <div className="body">
-                    <form className="create-form" onSubmit={handleSubmit}>
+                    <form className=" stockcreate-form" onSubmit={handleSubmit}>
                         <div className="label-with-input">
 
                             <label>Select Purchse Product</label>

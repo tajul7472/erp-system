@@ -11,29 +11,29 @@ const Stock = () => {
         { value: 'sell', label: 'For Sell' },
         { value: 'workorder', label: 'For Workorder' }
     ]
-    const productList = [
+    const [productList, setProductList] = useState([
         {
-            Id: 1012,
+            id: 1012,
             date: '1/5/2022',
-            productName: 'Micro Febric',
-            supplierName: 'Tajul Islam',
-            quentityKG: '1000',
-            availableKG: '14565'
+            product: 'Micro Febric',
+            supplier: 'Tajul Islam',
+            quentity: '1000',
+            stockQuentity: '14565'
 
 
 
         },
         {
 
-            Id: 1012,
+            id: 1042,
             date: '1/5/2022',
-            productName: 'Micro Febric',
-            supplierName: 'Tajul Islam',
-            quentityKG: '1000',
-            availableKG: '14565'
+            product: 'Micro Febric',
+            supplier: 'Tajul Islam',
+            quentity: '1000',
+            stockQuentity: '14565'
 
         }
-    ]
+    ])
 
     const [modalOpen, setModalOpen] = useState(false);
     const keyPress = useCallback(e => {
@@ -46,6 +46,19 @@ const Stock = () => {
         document.addEventListener('keydown', keyPress);
         return () => document.removeEventListener('keydown', keyPress)
     }, [keyPress])
+
+    //Add Product Stock
+    const addStock = (stock) => {
+        const id = Math.floor(Math.random() * 1000 + 1)
+        const newStock=({id,...stock})
+        setProductList([...productList,newStock])
+
+    }
+
+    //Delete Prodct Stock
+    const deleteStock=(id)=>{
+        setProductList(productList.filter((data)=> data.id!==id))
+    }
     return (
         <div className='stock-section'>
             <div className='header-top'>
@@ -160,15 +173,17 @@ const Stock = () => {
                                 <th>Action</th>
                             </tr>
                             {
-                                productList.map((item) => (
+                                productList.map((stockItem) => (
                                     <tr>
-                                        <td>{item.Id}</td>
-                                        <td>{item.date}</td>
-                                        <td>{item.productName}</td>
-                                        <td>{item.supplierName}</td>
-                                        <td className="quentity-kg">{item.quentityKG}</td>
-                                        <td>{item.availableKG}</td>
-                                        <td><button className="editBtn">Action</button></td>
+                                        <td>{stockItem.id}</td>
+                                        <td>{stockItem.date}</td>
+                                        <td>{stockItem.product}</td>
+                                        <td>{stockItem.supplier}</td>
+                                        <td>{stockItem.quentity}</td>
+                                        <td>{stockItem.stockQuentity}</td>
+                                        {/* <td><button className="editBtn">Action</button></td> */}
+                                        <td><button className="deleteBtn" onClick={()=>deleteStock(stockItem.id)} >Delete</button><button className="editBtn">Edit</button></td>
+
                                     </tr>
                                 ))
                             }
@@ -185,7 +200,7 @@ const Stock = () => {
                     </table>
                 </div>
             </div>
-            {modalOpen && <StockModal setOpenModal={setModalOpen} />}
+            {modalOpen && <StockModal setOpenModal={setModalOpen} onAdd={addStock}/>}
         </div>
     )
 }

@@ -34,6 +34,7 @@
     justify-content: space-between;
     background-color: black;
     color: #ffff;
+    cursor: pointer;
     
     
   }
@@ -47,6 +48,8 @@
     justify-content: center;
     height: 35px;
     width: 35px;
+    margin-right: 0.5rem;
+    cursor: pointer;
     
   }
   
