@@ -8,7 +8,7 @@ function DepositModal({ setOpenModal }) {
 
     const [inputs, setInputs] = useState({
 
-        employeName: '',
+        categoryName: '',
         remarks: ''
     });
 
@@ -24,13 +24,15 @@ function DepositModal({ setOpenModal }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputs);
+        
         setInputs({
 
 
-            employeName: '',
+            categoryName: '',
             remarks: ''
 
         })
+        setOpenModal(false)
     }
 
     return (
@@ -57,8 +59,8 @@ function DepositModal({ setOpenModal }) {
                         <div className="deposit-label-with-input">
                             <label>Category Name</label>
                             <input type="text"
-                                name="employeName"
-                                value={inputs.employeName || ""}
+                                name="categoryName"
+                                value={inputs.categoryName || ""}
                                 onChange={handleChange} />
 
                         </div>

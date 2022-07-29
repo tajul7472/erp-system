@@ -3,12 +3,13 @@ import './addDepositModal.css'
 
 import closeBtn from '../../Icons/close.png'
 
-function AddDepositModal({ setOpenModal }) {
+function AddDepositModal({ setOpenModal,onAdd }) {
 
 
     const [inputs, setInputs] = useState({
-
+        depositCategory:'',
         employeName: '',
+        amount: '',
         remarks: ''
     });
 
@@ -24,13 +25,16 @@ function AddDepositModal({ setOpenModal }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputs);
+        onAdd(inputs)
         setInputs({
 
-
+            depositCategory:'',
             employeName: '',
+            amount: '',
             remarks: ''
 
         })
+        setOpenModal(false)
     }
     const options = [
         { value: '', label: 'Please Select' },
@@ -55,9 +59,9 @@ function AddDepositModal({ setOpenModal }) {
 
                 <div className="add-deposit-body">
                     <form className="add-deposit-create-form" onSubmit={handleSubmit}>
-                    <div className="add-deposit-label-with-input">
+                        <div className="add-deposit-label-with-input">
                             <label>Category Select</label>
-                            <select id="company" name="companyFor"
+                            <select id="company" name="depositCategory"
                             // onChange={handleChange}
                             >
                                 {
@@ -86,8 +90,8 @@ function AddDepositModal({ setOpenModal }) {
                         <div className="add-deposit-label-with-input">
                             <label>Amount</label>
                             <input type="text"
-                                name="employeName"
-                                value={inputs.employeName || ""}
+                                name="amount"
+                                value={inputs.amount || ""}
                                 onChange={handleChange} />
 
                         </div>

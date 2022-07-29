@@ -3,12 +3,12 @@ import './partyModal.css'
 
 import closeBtn from '../../Icons/close.png'
 
-function PartyModal({ setOpenModal }) {
+function PartyModal({ setOpenModal ,onAdd}) {
     const options = [
         { value: '', label: 'Please Select' },
-        { value: 'Purchase', label: 'For Purchase' },
-        { value: 'sell', label: 'For Sell' },
-        { value: 'workorder', label: 'For Workorder' },
+        { value: 'Corona Transport', label: 'Corona Transport' },
+        { value: 'Eurotex', label: 'Eurotex' },
+        { value: 'Tashfia Export', label: 'Tashfia Export' },
     ]
 
     const [inputs, setInputs] = useState({
@@ -19,9 +19,9 @@ function PartyModal({ setOpenModal }) {
         Nationality: '',
         presentAddress: '',
         PermanentAddress: '',
-        personalNumber:'',
+        contact:'',
         optionalNumber:'',
-        partyEmail:'',
+        email:'',
         partyNid:'',
         
         image:''
@@ -39,6 +39,7 @@ function PartyModal({ setOpenModal }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputs);
+        onAdd(inputs)
         setInputs({
 
             partyName: '',
@@ -47,14 +48,15 @@ function PartyModal({ setOpenModal }) {
             Nationality: '',
             presentAddress: '',
             PermanentAddress: '',
-            personalNumber:'',
+            contact:'',
             optionalNumber:'',
-            partyEmail:'',
+            email:'',
             partyNid:'',
            
             image:''
 
         })
+        setOpenModal(false)
     }
 
     return (
@@ -76,7 +78,7 @@ function PartyModal({ setOpenModal }) {
                         <div className="party-label-with-input">
 
                             <label>Company Select</label>
-                            <select id="company" name="companyFor"
+                            <select id="company" name="companyName"
                                 onChange={handleChange}
                             >
                                 {
@@ -132,8 +134,8 @@ function PartyModal({ setOpenModal }) {
                         <div className="party-label-with-input">
                             <label>Personal Phone Number</label>
                             <input type="text"
-                                name="personalNumber"
-                                value={inputs.personalNumber || ""}
+                                name="contact"
+                                value={inputs.contact || ""}
                                 onChange={handleChange} />
 
                         </div>
@@ -148,8 +150,8 @@ function PartyModal({ setOpenModal }) {
                         <div className="party-label-with-input">
                             <label>Party Email</label>
                             <input type="text"
-                                name="partyEmail"
-                                value={inputs.partyEmail || ""}
+                                name="email"
+                                value={inputs.email || ""}
                                 onChange={handleChange} />
 
                         </div>

@@ -154,7 +154,7 @@ function Supplier() {
 
                 </div>
 
-                <div className="company-table">
+                <div className="supplier-table">
                     <table>
                         <tbody>
                             <tr>

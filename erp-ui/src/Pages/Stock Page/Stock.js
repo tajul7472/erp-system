@@ -182,7 +182,8 @@ const Stock = () => {
                                         <td>{stockItem.quentity}</td>
                                         <td>{stockItem.stockQuentity}</td>
                                         {/* <td><button className="editBtn">Action</button></td> */}
-                                        <td><button className="deleteBtn" onClick={()=>deleteStock(stockItem.id)} >Delete</button><button className="editBtn">Edit</button></td>
+                                        <td><button className="deleteBtn" onClick={()=>deleteStock(stockItem.id)} >Delete</button>
+                                        <button className="editBtn">Edit</button></td>
 
                                     </tr>
                                 ))

@@ -178,3 +178,62 @@
   .add-customer .create-customer button:hover{
       background-color: #148839;
   }
+  .customer-table {
+    padding: 1rem;
+}
+.customer-table table {
+    font-family: 'roboto';
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.2rem;
+   
+    
+  }
+  .customer-table table th{
+      text-align: center;
+      color: #6a7d91;
+      font-weight: 400;
+      background-color: #F6F7FB;
+      border: 1px solid #ffff;
+  }
+  .customer-table td, th {
+    border: 1px solid #f3f2f2;
+    text-align: left;
+    padding: 8px;
+  }
+  /* .customer-table tr:nth-child(even) {
+    background-color: #F6F7FB;
+  } */
+  .customer-table td:last-child{
+      /* display: flex; */
+      justify-content: center;
+      align-items: center;
+  }
+  .customer-table .deleteBtn{
+      color:crimson ;
+      border: 1px solid crimson;
+      padding: 0.3rem 0.8rem;
+      font-family: 'roboto';
+      font-size: 0.9rem;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+      cursor: pointer;
+      text-align: center;
+  }
+  .customer-table .deleteBtn:hover{
+      color: #ffff;
+      background-color:crimson ;
+  }
+  .customer-table .editBtn{
+    color:#18A745 ;
+    border: 1px solid #18A745;
+    padding: 0.3rem 0.8rem;
+    font-family: 'roboto';
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .customer-table .editBtn:hover{
+      color: #ffff;
+      background-color: #18A745;
+  }

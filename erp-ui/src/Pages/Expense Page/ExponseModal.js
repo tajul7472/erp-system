@@ -3,7 +3,7 @@ import './expensesModal.css'
 
 import closeBtn from '../../Icons/close.png'
 
-function ExponseModal({ setOpenModal }) {
+function ExponseModal({ setOpenModal , onAdd}) {
 
 
     const [inputs, setInputs] = useState({
@@ -24,6 +24,7 @@ function ExponseModal({ setOpenModal }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputs);
+       onAdd(inputs)
         setInputs({
 
 

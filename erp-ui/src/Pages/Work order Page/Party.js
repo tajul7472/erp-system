@@ -17,28 +17,43 @@ const Party = () => {
         return () => document.removeEventListener('keydown', keyPress)
     }, [keyPress])
 
-    const customerData=[
+    const [partyData, setPartyData] = useState([
         {
-            partyId:1012,
-            companyName:'InspirBd',
-            partyName:'Tajul Islam',
-            contact:'01705386513',
-            email:'tajul@gmail.com',
-            address:'Dhaka',
-            photo:'../../Icons/home.png'
-            
+            id: 1012,
+            companyName: 'InspirBd',
+            partyName: 'Tajul Islam',
+            contact: '01705386513',
+            email: 'tajul@gmail.com',
+            presentAddress: 'Dhaka',
+            image: '../../Icons/home.png'
+
         },
         {
-            
-            partyId:1012,
-            companyName:'InspirBd',
-            partyName:'Tajul Islam',
-            contact:'01705386513',
-            email:'tajul@gmail.com',
-            address:'Dhaka',
-            photo:'../../Icons/home.png'
+
+            id: 1055,
+            companyName: 'InspirBd',
+            partyName: 'Tajul Islam',
+            contact: '01705386513',
+            email: 'tajul@gmail.com',
+            presentAddress: 'Dhaka',
+            image: '../../Icons/home.png'
         }
-    ]
+    ])
+
+    //Add PartyData
+    const addParty = (party) => {
+        const id = Math.floor(Math.random() * 1000 + 1)
+        const newParty=({id,...party})
+        setPartyData([...partyData,newParty])
+
+    }
+
+    //Delete PartyData
+    const deleteParty=(id)=>{
+        setPartyData(partyData.filter((data)=>data.id!==id))
+    }
+
+
     return (
         <div className='create-party-section'>
             <div className='header-top'>
@@ -72,27 +87,27 @@ const Party = () => {
                 </div>
 
                 <div className="show-search-section">
-                        <div className="show">
-                            <span>Show</span>
-                            <span>
-                                <select>
-                                    <option>10</option>
-                                    <option>25</option>
-                                    <option>50</option>
-                                    <option>100</option>
-                                </select>
-                            </span>
-                            <span>Entries</span>
-                        </div>
-                        <div className="search-option">
-                            <label>Search:
-                                <input type="text"
-                                    name="search"
-                                />
-                            </label>
-                        </div>
-
+                    <div className="show">
+                        <span>Show</span>
+                        <span>
+                            <select>
+                                <option>10</option>
+                                <option>25</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                        </span>
+                        <span>Entries</span>
                     </div>
+                    <div className="search-option">
+                        <label>Search:
+                            <input type="text"
+                                name="search"
+                            />
+                        </label>
+                    </div>
+
+                </div>
 
                 <div className="company-table">
                     <table>
@@ -107,29 +122,32 @@ const Party = () => {
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
-                           {
-                               customerData.map((item)=>(
-                                   <tr>
-                                       <td>{item.partyId}</td>
-                                       <td>{item.companyName}</td>
-                                       <td>{item.partyName}</td>
-                                       <td>{item.contact}</td>
-                                       <td>{item.email}</td>
-                                       <td>{item.address}</td>
-                                       {/* <td>{item.photo}</td> */}
-                                       <td><img src={item.photo} /></td>
-                                       
-                                       <td><button className="editBtn">Action</button></td>
-                                   </tr>
-                               ))
-                           }
+                            {
+                                partyData.map((item) => (
+                                    <tr>
+                                        <td>{item.id}</td>
+                                        <td>{item.companyName}</td>
+                                        <td>{item.partyName}</td>
+                                        <td>{item.contact}</td>
+                                        <td>{item.email}</td>
+                                        <td>{item.presentAddress}</td>
+                                        {/* <td>{item.image}</td> */}
+                                        <td><img src={item.image} /></td>
+
+                                        {/* <td><button className="editBtn">Action</button></td> */}
+                                        <td><button className="deleteBtn" onClick={()=>deleteParty(item.id)} >Delete</button>
+                                            <button className="editBtn">Edit</button></td>
+
+                                    </tr>
+                                ))
+                            }
                         </tbody>
                     </table>
                 </div>
 
 
             </div>
-            {modalOpen && <PartyModal setOpenModal={setModalOpen} />}
+            {modalOpen && <PartyModal setOpenModal={setModalOpen} onAdd={addParty}/>}
 
         </div>
     )

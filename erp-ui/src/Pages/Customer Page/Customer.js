@@ -154,7 +154,7 @@ function Customer() {
 
                 </div>
 
-                <div className="company-table">
+                <div className="customer-table">
                     <table>
                         <tbody>
                             <tr>

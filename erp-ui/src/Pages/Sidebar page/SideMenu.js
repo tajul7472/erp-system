@@ -87,7 +87,7 @@ export const menuItems = [
                 ]
             },
             { name: "New Work Order", to: "/Advance/newAdvance", },
-            { name: "All WOrk Order", to: "/Advance/allAdvance" },
+            { name: "All Work Order", to: "/Advance/allAdvance" },
         ],
        
     },

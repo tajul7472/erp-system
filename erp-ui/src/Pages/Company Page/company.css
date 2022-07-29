@@ -147,7 +147,7 @@
     background-color: #F6F7FB;
   } */
   .company-table td:last-child{
-      /* display: flex; */
+      display: flex;
       justify-content: center;
       align-items: center;
   }

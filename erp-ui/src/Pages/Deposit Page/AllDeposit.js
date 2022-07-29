@@ -5,19 +5,19 @@ import AddDepositModal from "./AddDepositModal";
 import './allDeposit.css'
 
 const AllDeposit = () => {
-    const category = [
+    const depositCategory = [
         { value: '', label: 'Please Select ' },
         { value: 'bank', label: 'Bank Deposit' },
         { value: 'card', label: 'Card Deposit' },
         { value: 'cash', label: 'Cash Deposit' }
     ]
 
-    const productList = [
+    const [deposit, setDeposit] = useState([
         {
-            Id: 1012,
+            id: 1012,
             date: '1/5/2022',
-            category: 'Bank Deposit',
-            name: 'Tajul Islam',
+            depositCategory: 'Bank Deposit',
+            employeName: 'Tajul Islam',
             amount: '1000',
             remarks: '14565'
 
@@ -26,14 +26,27 @@ const AllDeposit = () => {
         },
         {
 
-            Id: 1012,
+            id: 1013,
             date: '1/5/2022',
-            category: 'Cash Deposit',
-            name: 'Tajul Islam',
+            depositCategory: 'Cash Deposit',
+            employeName: 'Tajul Islam',
             amount: '1000',
             remarks: '14565'
         }
-    ]
+    ])
+
+    // Add All Deposit
+    const addDeposit = (data) => {
+        const id = Math.floor(Math.random() * 1000 + 1)
+        const newDepost = ({ id, ...data })
+        setDeposit([...deposit, newDepost])
+    }
+
+    //Delete all deposit
+    const deleteAllCategory = (id) => {
+        setDeposit(deposit.filter((data) => data.id !== id))
+
+    }
 
     const [modalOpen, setModalOpen] = useState(false);
     const keyPress = useCallback(e => {
@@ -70,7 +83,7 @@ const AllDeposit = () => {
                             // onChange={handleChange}
                             >
                                 {
-                                    category.map((item, index) => (
+                                    depositCategory.map((item, index) => (
                                         <option key={index} value={item.value}>{item.label}</option>
                                     ))
                                 }
@@ -167,15 +180,16 @@ const AllDeposit = () => {
                                 <th>Action</th>
                             </tr>
                             {
-                                productList.map((item) => (
+                                deposit.map((item) => (
                                     <tr>
-                                        <td>{item.Id}</td>
+                                        <td>{item.id}</td>
                                         <td>{item.date}</td>
-                                        <td>{item.category}</td>
-                                        <td>{item.name}</td>
-                                        <td className>{item.amount}</td>
+                                        <td>{item.depositCategory}</td>
+                                        <td>{item.employeName}</td>
+                                        <td >{item.amount}</td>
                                         <td>{item.remarks}</td>
-                                        <td><button className="deleteBtn">Delete</button><button className="editBtn">Edit</button></td>
+                                        <td><button className="deleteBtn" onClick={() => deleteAllCategory(item.id)}>Delete</button>
+                                            <button className="editBtn">Edit</button></td>
                                     </tr>
                                 ))
                             }
@@ -194,7 +208,7 @@ const AllDeposit = () => {
                 </div>
 
             </div>
-            {modalOpen && <AddDepositModal setOpenModal={setModalOpen} />}
+            {modalOpen && <AddDepositModal setOpenModal={setModalOpen} onAdd={addDeposit} />}
 
 
         </div>

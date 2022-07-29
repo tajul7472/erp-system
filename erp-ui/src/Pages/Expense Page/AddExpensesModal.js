@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import closeBtn from '../../Icons/close.png'
 
-function AddExpensesModal({ setOpenModal }) {
+function AddExpensesModal({ setOpenModal ,onAdd}) {
 
 
     const [inputs, setInputs] = useState({
@@ -24,6 +24,7 @@ function AddExpensesModal({ setOpenModal }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputs);
+        onAdd(inputs)
         setInputs({
 
 
