@@ -4,50 +4,66 @@ import home from '../../Icons/home.png'
 import AddExpensesModal from "./AddExpensesModal";
 
 const AllExpenses = () => {
-  const expenseCategory = [
-    { value: '', label: 'Please Select ' },
-    { value: 'salary', label: 'Salary Expense' },
-    { value: 'lunch', label: 'Lunch Bill' },
-    { value: 'electric', label: 'Electricity Bill' }
-]
+    const [expenseCategory,setexpenseCategory]= useState([
+        { value: '', label: 'Please Select ' },
+        { value: 'salary', label: 'Salary Expense' },
+        { value: 'lunch', label: 'Lunch Bill' },
+        { value: 'electric', label: 'Electricity Bill' }
+    ])
 
-const productList = [
-    {
-        Id: 1012,
-        date: '1/5/2022',
-        category: 'Salary Expense',
-        name: 'Tajul Islam',
-        amount: '1000',
-        remarks: '14565'
+    const [allExpenses, setAllExpenses] = useState([
+        {
+            id: 1012,
+            date: '1/5/2022',
+            category: 'Salary Expense',
+            name: 'Tajul Islam',
+            amount: '1000',
+            remarks: '14565'
 
 
 
-    },
-    {
+        },
+        {
 
-        Id: 1012,
-        date: '1/5/2022',
-        category: 'Lunch Bill',
-        name: 'Tajul Islam',
-        amount: '1000',
-        remarks: '14565'
+            id: 1012,
+            date: '1/5/2022',
+            category: 'Lunch Bill',
+            name: 'Tajul Islam',
+            amount: '1000',
+            remarks: '14565'
+        }
+    ])
+
+    //Add All Expenses
+    const addAllExpenses = (data) => {
+        const id = Math.floor(Math.random() * 1000 + 1)
+        const allExpensescategory = ({ id, ...data })
+        setAllExpenses([...allExpenses, allExpensescategory])
+        
     }
-]
 
-const [modalOpen, setModalOpen] = useState(false);
-const keyPress = useCallback(e => {
-    if (e.key === 'Escape' && modalOpen) {
-        setModalOpen(false)
+      //Delete all Expense
+      const deleteAllExpenses = (id) => {
+        setAllExpenses(allExpenses.filter((data) => data.id !== id))
+
     }
-}, [setModalOpen, modalOpen])
 
-useEffect(() => {
-    document.addEventListener('keydown', keyPress);
-    return () => document.removeEventListener('keydown', keyPress)
-}, [keyPress])
-  return (
-    <div className='all-expense-section'>
-         <div className='header-top'>
+    
+
+    const [modalOpen, setModalOpen] = useState(false);
+    const keyPress = useCallback(e => {
+        if (e.key === 'Escape' && modalOpen) {
+            setModalOpen(false)
+        }
+    }, [setModalOpen, modalOpen])
+
+    useEffect(() => {
+        document.addEventListener('keydown', keyPress);
+        return () => document.removeEventListener('keydown', keyPress)
+    }, [keyPress])
+    return (
+        <div className='all-expense-section'>
+            <div className='header-top'>
                 <div className='header-top-logo'>
                     <img src={logo} alt='Header Logo' />
                     <span>All Expenses</span>
@@ -165,15 +181,17 @@ useEffect(() => {
                                 <th>Action</th>
                             </tr>
                             {
-                                productList.map((item) => (
+
+                                allExpenses.map((item) => (
                                     <tr>
-                                        <td>{item.Id}</td>
+                                        <td>{item.id}</td>
                                         <td>{item.date}</td>
                                         <td>{item.category}</td>
                                         <td>{item.name}</td>
                                         <td className>{item.amount}</td>
                                         <td>{item.remarks}</td>
-                                        <td><button className="deleteBtn">Delete</button><button className="editBtn">Edit</button></td>
+                                        <td><button className="deleteBtn" onClick={() => deleteAllExpenses(item.id)}>Delete</button>
+                                        <button className="editBtn">Edit</button></td>
                                     </tr>
                                 ))
                             }
@@ -192,11 +210,11 @@ useEffect(() => {
                 </div>
 
             </div>
-            {modalOpen && <AddExpensesModal setOpenModal={setModalOpen} />}
+            {modalOpen && <AddExpensesModal setOpenModal={setModalOpen} onAdd={addAllExpenses} />}
 
 
-    </div>
-  )
+        </div>
+    )
 }
 
 export default AllExpenses

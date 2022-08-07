@@ -3,7 +3,7 @@ import './depositModal.css'
 
 import closeBtn from '../../Icons/close.png'
 
-function DepositModal({ setOpenModal }) {
+function DepositModal({ setOpenModal ,onAdd}) {
 
 
     const [inputs, setInputs] = useState({
@@ -24,7 +24,8 @@ function DepositModal({ setOpenModal }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputs);
-        
+        onAdd(inputs)
+
         setInputs({
 
 

@@ -38,6 +38,7 @@ const DepositCategory = () => {
     setCategory([...category, newCategoryName])
 
   }
+  
   //Delete CategoryName
   const deleteCategory=(id)=>{
     setCategory(category.filter((data)=>data.id!==id))

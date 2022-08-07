@@ -4,6 +4,12 @@ import './addDepositModal.css'
 import closeBtn from '../../Icons/close.png'
 
 function AddDepositModal({ setOpenModal,onAdd }) {
+    const options = [
+        { value: '', label: 'Please Select' },
+        { value: 'bank', label: 'Bank Deposit' },
+        { value: 'card', label: 'Card Deposit' },
+        { value: 'cash', label: 'Cash Deposit' },
+    ]
 
 
     const [inputs, setInputs] = useState({
@@ -36,12 +42,7 @@ function AddDepositModal({ setOpenModal,onAdd }) {
         })
         setOpenModal(false)
     }
-    const options = [
-        { value: '', label: 'Please Select' },
-        { value: 'bank', label: 'Bank Deposit' },
-        { value: 'card', label: 'Card Deposit' },
-        { value: 'cash', label: 'Cash Deposit' },
-    ]
+    
 
     return (
         <div className="add-deposit-modalBackground">
@@ -62,7 +63,7 @@ function AddDepositModal({ setOpenModal,onAdd }) {
                         <div className="add-deposit-label-with-input">
                             <label>Category Select</label>
                             <select id="company" name="depositCategory"
-                            // onChange={handleChange}
+                            onChange={handleChange}
                             >
                                 {
                                     options.map((item, index) => (
